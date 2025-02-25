@@ -1,20 +1,50 @@
+---
+import ROUTES from '../assets/menu.json'
+const isEnglishPage = Astro.url.pathname.startsWith('/en/')
+---
+
 <header class="site-header">
   <div class="wrapper site-header__wrapper container">
     <h1>
-      <a href="#pageTop" class="brand" title="Volver al inicio">Portafolio</a>
+      <a
+        href="#pageTop"
+        class="brand"
+        title={isEnglishPage ? 'Back to top' : 'Volver al inicio'}
+      >
+        {isEnglishPage ? 'Portfolio' : 'Portafolio'}
+      </a>
     </h1>
     <nav class="nav">
       <button class="nav__toggle" aria-expanded="false" type="button">
-        <span class="menu">Menú</span>
+        <span class="menu">{isEnglishPage ? 'MENU' : 'MENÚ'}</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
       <ul class="nav__wrapper" role="list">
-        <li><a href="#sobreMi">Sobre mí</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li class="activeLang"><a href="/">Español</a></li>
-        <li class=""><a href="/en/" hreflang="en">Inglés</a></li>
+        {
+          ROUTES.map((route) => (
+            <li>
+              <a href={isEnglishPage ? route.urlEn : route.urlEs}>
+                {isEnglishPage ? route.nameEn : route.nameEs}
+              </a>
+            </li>
+          ))
+        }
+        <li class={`${isEnglishPage ? '' : 'activeLang'}`}>
+          <a
+            href="/"
+            {...isEnglishPage ? { hreflang: 'es' } : {}}
+            title="Ir a la versión española">Español</a
+          >
+        </li>
+        <li class={`${isEnglishPage ? 'activeLang' : ''}`}>
+          <a
+            href="/en/"
+            {...isEnglishPage ? {} : { hreflang: 'en' }}
+            title="Go to English version">English</a
+          >
+        </li>
       </ul>
     </nav>
   </div>

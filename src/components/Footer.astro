@@ -1,7 +1,11 @@
+---
+const isEnglishPage = Astro.url.pathname.startsWith('/en/')
+---
+
 <footer>
   <div class="footerTop">
     <div class="container">
-      <h3>Redes sociales</h3>
+      <h3>{isEnglishPage ? 'Social networks' : 'Redes sociales'}</h3>
       <ul role="list" class="socialIcons">
         <li class="icon twitter">
           <span class="tooltip">X/Twitter</span>
