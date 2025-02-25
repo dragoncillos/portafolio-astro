@@ -1,0 +1,51 @@
+/*
+---------------------------------------------------------------------------------
+		Component: Hero section
+		URL: https://www.dragoncillos.com/
+		Author: dragoncillos.com
+		v2.1: 21/02/2024
+---------------------------------------------------------------------------------
+*/
+
+#sectionHero {
+	padding-block-start: calc(var(--height-nav) + 1.5rem);
+	padding-block-end: calc(var(--gap) * 2.5);
+	color: var(--color-white);
+	background-color: var(--color-primary);
+
+	& .hero {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		color: var(--color-white);
+		background-color: var(--color-primary);
+
+		& img {
+			height: 13rem;
+			margin-block: var(--gap);
+			border: 3px solid transparent;
+			border-radius: 100%;
+			outline: 2px solid var(--color-white);
+		}
+
+		& p {
+			text-align: center;
+			font-size: var(--font-size);
+
+			@media (--md-above) {
+				font-weight: 700;
+			}
+		}
+
+		& p:not(:has(strong)) {
+			padding-inline: var(--gap);
+		}
+
+		& strong {
+			text-transform: uppercase;
+			font-size: clamp(var(--font-size), 7vw, 2.8rem);
+		}
+	}
+}

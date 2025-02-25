@@ -1,0 +1,82 @@
+/*
+---------------------------------------------------------------------------------
+		Component: Card flip image change
+		URL: https://www.dragoncillos.com/
+		Author: dragoncillos.com
+		v2.1: 21/02/2024
+---------------------------------------------------------------------------------
+*/
+
+.hero .card {
+	position: relative;
+	width: 250px;
+	height: 250px;
+	margin-block-end: 2rem;
+	color: white;
+	transition: 1s ease-in-out;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.hero .card:hover {
+	-webkit-transform: rotateY(0.5turn);
+	transform: rotateY(0.5turn);
+}
+
+.hero .card .item {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: 1s ease-in-out;
+}
+
+.hero .card .item img {
+	width: 250px;
+	height: 250px;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+.hero .card .back-side {
+	-webkit-transform: rotateY(0.5turn);
+	transform: rotateY(0.5turn);
+}
+
+/* Component: rrss */
+.btn-social {
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	border: 2px solid var(--color-white);
+	border-radius: 100%;
+	text-align: center;
+	line-height: 50px;
+	transition: all 0.3s ease-in-out;
+
+	@media (--reduced-motion ) {
+		transition: none;
+	}
+
+	&:is(:hover, :focus, :active) {
+		background: var(--color-white);
+	}
+
+	&:is(:hover, :focus, :active) svg {
+		fill: var(--color-primary);
+	}
+}
+
+/* Component: prefers */
+@media (--reduced-motion) {
+	.hero .card {
+		transition: none;
+	}
+	.hero .card:hover {
+		transform: none;
+	}
+}

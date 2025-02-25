@@ -1,0 +1,74 @@
+/*
+---------------------------------------------------------------------------------
+		Component: Hover social icons
+		URL: https://www.dragoncillos.com/
+		Author: dragoncillos.com
+		v2.1: 21/02/2024
+---------------------------------------------------------------------------------
+*/
+
+.socialIcons .icon {
+	position: relative;
+	transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+	@media (--reduced-motion ) {
+		transition: none;
+	}
+}
+
+.socialIcons .tooltip {
+	position: absolute;
+	top: 0;
+	left: -18px;
+	font-size: calc(var(--font-size) - 0.4rem);
+	background: #ffffff;
+	color: var(--color-primary);
+	padding: 5px 8px;
+	border-radius: 5px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+	@media (--reduced-motion) {
+		transition: none;
+	}
+}
+
+/* flechita blanca */
+.socialIcons .tooltip::before {
+	position: absolute;
+	content: "";
+	height: 8px;
+	width: 8px;
+	background: #ffffff;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%) rotate(45deg);
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@media (--reduced-motion) {
+	.socialIcons .tooltip::before {
+		transition: none;
+	}
+}
+
+.socialIcons :is(.icon:hover, .twitter:focus-within, .instagram:focus-within, .youtube:focus-within, .linkedin:focus-within) .tooltip {
+	top: -42px;
+	left: -14px;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	white-space: nowrap;
+	text-wrap: nowrap;
+}
+
+.socialIcons :is(.icon.instagram:hover, .instagram:focus-within) .tooltip{
+	left: -18px;
+}
+
+.socialIcons .icon:hover span,
+.socialIcons .icon:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}

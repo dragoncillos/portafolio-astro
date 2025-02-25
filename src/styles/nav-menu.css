@@ -1,0 +1,147 @@
+/*
+---------------------------------------------------------------------------------
+		Component: Nav menu
+		Source: https://headers-css.vercel.app/
+		URL: https://www.dragoncillos.com/
+		Author: dragoncillos.com
+		v2.1: 21/02/2024
+---------------------------------------------------------------------------------
+*/
+
+.site-header {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	color: var(--color-white);
+	background-color: var(--color-secondary);
+
+	& .container {
+		height: var(--height-nav);
+	}
+
+	& h1 {
+		margin-right: auto;
+		text-transform: uppercase;
+		font-size: clamp(var(--font-size), 4vw, 1.8rem);
+		color: var(--color-white);
+	}
+
+	& a {
+		text-decoration: none;
+		transition: all 0.3s ease-in-out;
+
+		&:is(:link, :visited) {
+			color: var(--color-white);
+		}
+
+		&:is(:hover, :focus, :active) {
+			color: var(--color-primary-light);
+		}
+
+		&.active {
+			color: var(--color-primary-light);
+			background-color: hsl(206deg 16% 39%);
+			border-radius: 4px;
+		}
+
+		@media (--reduced-motion) {
+			transition: none;
+		}
+	}
+
+	/* ul */
+	& .nav__wrapper {
+		& a {
+			display: block;
+			padding: 0.5rem;
+		}
+
+		& li:not([class]) {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+
+		& :is(.activeLang, .activeLang a) {
+			color: var(--color-primary-light);
+		}
+	}
+}
+
+@media (--md-above) {
+	/* ul */
+	.nav__wrapper {
+		display: flex;
+		align-items: center;
+
+		& li:nth-last-child(2) {
+			margin-inline-start: var(--gap);
+		}
+	}
+}
+
+@media (--md-below) {
+	/* ul */
+	.nav__wrapper {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		z-index: -1;
+		background-color: var(--color-secondary);
+		visibility: hidden;
+		opacity: 0;
+		transform: translateY(-100%);
+		transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+
+		& li {
+			margin-left: calc(var(--gap) / 2);
+		}
+	}
+
+	/* ul */
+	.nav__wrapper.active {
+		visibility: visible;
+		opacity: 1;
+		transform: translateY(0);
+		border-top: 1px solid #707070;
+	}
+}
+
+.nav__toggle {
+	/* button */
+	display: none;
+}
+
+@media (--md-below) {
+	.nav__toggle {
+		/* button */
+		display: block;
+		padding: 0.3rem;
+		border: 1px solid #000;
+		border-radius: 4px;
+		background-color: transparent;
+
+		& .menu {
+			float: right;
+			margin-top: -0.2em;
+			margin-bottom: -1em;
+			margin-left: 2rem;
+			font-weight: normal;
+			color: var(--color-white);
+		}
+
+		& .icon-bar {
+			display: block;
+			width: 1.2rem;
+			height: 0.1rem;
+			margin: 4px;
+			border-radius: 1px;
+			background-color: var(--color-white);
+		}
+
+		&:is(:active, :focus) {
+			background-color: #000;
+		}
+	}
+}
+/** Nav menu end **/

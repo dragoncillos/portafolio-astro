@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro'
+const lang = 'en'
+const title = 'Accessible website designer and developer.'
+const description =
+  'I am a web designer and a web developer, specialising in accessible, user-friendly web sites. WordPress, Prestashop, Joomla and custom web site design.'
+const canonical = 'en/'
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <article>
+    <a
+      href="http://www.aleceia.com/"
+      title="Visit Aleceia de Juan MCIL, MA, DPSI"
+    >
+      <picture>
+        <source srcset="/images/aleceia.v2.avif" type="image/avif" />
+        <source srcset="/images/aleceia.v2.webp" type="image/webp" />
+        <img
+          src="/images/aleceia.v2.jpg"
+          class="img-responsive"
+          alt="Screenshot from Aleceia's website"
+          width="720"
+          height="540"
+          loading="lazy"
+        />
+      </picture>
+    </a>
+    <h3>
+      Aleceia de Juan MCIL, MA, DPSI. Interpreting and Translation Services
+    </h3>
+    <p>
+      <strong>New version2025</strong>. Website of Aleceia de Juan MCIL, MA,
+      DPSI build with <strong>Astro</strong>
+    </p>
+    <ul class="item-details">
+      <li>
+        Client:
+        <strong>Aleceia de Juan</strong>
+      </li>
+      <li>
+        Services: <strong>Graphic design, web development, SEO</strong>, website
+        conforms to the W3C <strong>WCAG 2.2 Level AA</strong>,
+        <strong>WPO</strong> (Web Performance Optimization)
+      </li>
+      <li>
+        <strong
+          ><a href="http://www.aleceia.com/"
+            >Visit Aleceia de Juan MCIL, MA, DPSI website</a
+          ></strong
+        >
+      </li>
+    </ul>
+  </article>
+</Layout>

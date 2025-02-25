@@ -1,0 +1,155 @@
+/*
+---------------------------------------------------------------------------------
+		Component: Print
+		URL: https://www.dragoncillos.com/
+		Author: dragoncillos.com
+		Soruce: https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/
+						https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/
+		v2.1: 24/02/2024
+---------------------------------------------------------------------------------
+*/
+
+@media print {
+  /* Cambiar el margen de todas las páginas creadas al imprimir su documento */
+  @page {
+    size: A4 portrait;
+  }
+
+  body {
+    font-size: 12px !important;
+
+    a {
+      display: inline !important;
+    }
+
+    a:visited {
+      color: var(--link);
+    }
+
+    .container {
+      margin-left: 0.85cm;
+      margin-right: 0.85cm;
+    }
+
+    .wrap {
+      margin: 0 auto;
+      padding: 10px 0;
+      background: var(--pure-white);
+    }
+
+    header,
+    main,
+    footer {
+      display: grid;
+      grid-row-gap: 0.25rem;
+      grid-auto-rows: minmax(75px, auto);
+      align-items: baseline;
+    }
+
+    header {
+      grid-template-columns: 70% 30%;
+      grid-template-areas: 'header-1 header-2';
+      grid-column-gap: 0;
+      margin-bottom: 1.5rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: 1px solid var(--cv-line);
+
+      & ul {
+        margin-block-start: 0;
+        text-align: right;
+      }
+
+      & li a[href^='https'] {
+        margin-bottom: 0;
+        padding: 0;
+        color: var(--cv-black);
+        background: none;
+      }
+    }
+
+    main {
+      grid-template-columns: 150px repeat(3, 1fr);
+      grid-template-areas:
+        'perfil-1 perfil-2 perfil-2 perfil-2'
+        'habilidades-1 habilidades-2 habilidades-3 habilidades-4'
+        'tecnicas-1 tecnicas-2 tecnicas-3 tecnicas-4'
+        'experiencia-1 experiencia-2 experiencia-2 experiencia-2'
+        'experiencia-1 experiencia-3 experiencia-3 experiencia-3'
+        'experiencia-1 experiencia-4 experiencia-4 experiencia-4'
+        'formacion-1 formacion-2 formacion-2 formacion-2';
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+
+    .header-1 {
+      grid-area: header-1;
+    }
+    .header-2 {
+      grid-area: header-2;
+    }
+    .perfil-1 {
+      grid-area: perfil-1;
+    }
+    .perfil-2 {
+      grid-area: perfil-2;
+    }
+    .habilidades-1 {
+      grid-area: habilidades-1;
+    }
+    .habilidades-2 {
+      grid-area: habilidades-2;
+    }
+    .habilidades-3 {
+      grid-area: habilidades-3;
+    }
+    .habilidades-4 {
+      grid-area: habilidades-4;
+    }
+    .tecnicas-1 {
+      grid-area: tecnicas-1;
+    }
+    .tecnicas-2 {
+      grid-area: tecnicas-2;
+    }
+    .tecnicas-3 {
+      grid-area: tecnicas-3;
+    }
+    .tecnicas-4 {
+      grid-area: tecnicas-4;
+    }
+    .experiencia-1 {
+      grid-area: experiencia-1;
+    }
+    .experiencia-2 {
+      grid-area: experiencia-2;
+    }
+    .experiencia-3 {
+      grid-area: experiencia-3;
+    }
+    .experiencia-4 {
+      grid-area: experiencia-4;
+    }
+    .formacion-1 {
+      grid-area: formacion-1;
+    }
+    .formacion-2 {
+      grid-area: formacion-2;
+    }
+    .footer-1 {
+      grid-area: footer-1;
+    }
+
+    footer {
+      padding-top: 0.5rem;
+      background: none;
+      grid-template-areas: 'footer-1 footer-1 footer-1 footer-1';
+
+      & a {
+        display: none;
+      }
+    }
+  }
+}

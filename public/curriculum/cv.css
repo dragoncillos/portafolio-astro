@@ -1,0 +1,364 @@
+/*
+---------------------------------------------------------------------------------
+		Component: cv
+		URL: https://www.dragoncillos.com/curriculum/marcos-de-miguel.html
+		Author: dragoncillos.com
+		v1.0: 12/04/2020
+---------------------------------------------------------------------------------
+*/
+
+@import url('stylesheets/print.css');
+
+/* var */
+:root {
+  --pure-white: #ffffff;
+  --cv-black: #444444;
+  --cv-title: #333333;
+  --cv-line: #cccccc;
+  --cv-border: #666666;
+  --cv-border-hover: #222222;
+  --cv-background: #f5f5f5;
+  --link: #990003;
+  --link-hover: #cc0003;
+  --link-visited: #660066;
+}
+
+/* Reset */
+html {
+  color: #000;
+  background: var(--pure-white);
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+/* Core */
+body {
+  display: flex;
+  justify-content: center;
+  font-family: Georgia;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--cv-black);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+  color: var(--cv-title);
+}
+
+h1 {
+  font-size: 160%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 152%;
+  font-style: italic;
+}
+
+h3,
+h4 {
+  font-size: 122%;
+}
+
+p {
+  padding-right: 2em;
+}
+
+a {
+  display: block;
+  padding: 0.3rem 0rem;
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 250%;
+    letter-spacing: 3px;
+  }
+}
+
+@media (min-width: 1025px) {
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 152%;
+  }
+
+  h3,
+  h4 {
+    font-size: 122%;
+  }
+
+  p {
+    padding-right: 2em;
+  }
+}
+
+/* Layout */
+.container {
+  max-width: 1024px;
+}
+
+.wrap {
+  padding: 30px;
+  border: solid var(--cv-border);
+  border-width: 8px 0 2px 0;
+  background: var(--cv-background);
+}
+
+footer {
+  text-align: center;
+}
+
+@media (min-width: 1025px) {
+  .wrap {
+    padding: 30px 80px;
+    margin: 40px auto 0 auto;
+    padding: 10px 80px;
+    border: solid var(--cv-border);
+    border-width: 8px 0 2px 0;
+  }
+
+  header,
+  main,
+  footer {
+    display: grid;
+    grid-row-gap: 1.75rem;
+    grid-auto-rows: minmax(100px, auto);
+    align-items: baseline;
+  }
+
+  header {
+    grid-template-columns: 60% 40%;
+    grid-template-areas: 'header-1 header-2';
+    border-bottom: 1px solid var(--cv-line);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'perfil-1 perfil-2 perfil-2 perfil-2'
+      'habilidades-1 habilidades-2 habilidades-3 habilidades-4'
+      'tecnicas-1 tecnicas-2 tecnicas-3 tecnicas-4'
+      'experiencia-1 experiencia-2 experiencia-2 experiencia-2'
+      'experiencia-1 experiencia-3 experiencia-3 experiencia-3'
+      'experiencia-1 experiencia-4 experiencia-4 experiencia-4'
+      'formacion-1 formacion-2 formacion-2 formacion-2';
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'footer-1';
+    text-align: center;
+  }
+
+  .header-1 {
+    grid-area: header-1;
+  }
+  .header-2 {
+    grid-area: header-2;
+  }
+  .perfil-1 {
+    grid-area: perfil-1;
+  }
+  .perfil-2 {
+    grid-area: perfil-2;
+  }
+  .habilidades-1 {
+    grid-area: habilidades-1;
+  }
+  .habilidades-2 {
+    grid-area: habilidades-2;
+  }
+  .habilidades-3 {
+    grid-area: habilidades-3;
+  }
+  .habilidades-4 {
+    grid-area: habilidades-4;
+  }
+  .tecnicas-1 {
+    grid-area: tecnicas-1;
+  }
+  .tecnicas-2 {
+    grid-area: tecnicas-2;
+  }
+  .tecnicas-3 {
+    grid-area: tecnicas-3;
+  }
+  .tecnicas-4 {
+    grid-area: tecnicas-4;
+  }
+  .experiencia-1 {
+    grid-area: experiencia-1;
+  }
+  .experiencia-2 {
+    grid-area: experiencia-2;
+  }
+  .experiencia-3 {
+    grid-area: experiencia-3;
+  }
+  .experiencia-4 {
+    grid-area: experiencia-4;
+  }
+  .formacion-1 {
+    grid-area: formacion-1;
+  }
+  .formacion-2 {
+    grid-area: formacion-2;
+  }
+  .footer-1 {
+    grid-area: footer-1;
+  }
+}
+
+/* Content > Head */
+header h1 span {
+  display: block;
+  font-size: 60%;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+header ul {
+  margin-top: 1rem;
+}
+
+header a[href^='https'] {
+  display: block;
+  background: var(--cv-border);
+  color: white;
+  padding: 6px 12px;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+
+header [href^='https']:hover {
+  background: var(--cv-border-hover);
+}
+
+@media (min-width: 1025px) {
+  header h1 span {
+    font-size: 50%;
+  }
+
+  header ul {
+    margin-top: 0.5rem;
+    text-align: right;
+  }
+
+  header a[href^='https'] {
+    display: inline-block;
+  }
+}
+
+/* Content > Main */
+h3 {
+  margin-top: 0.7rem;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.tecnicas-2,
+.tecnicas-3,
+.tecnicas-4 {
+  margin-bottom: 1rem;
+}
+
+.experiencia-3 h3,
+.experiencia-4 h3,
+.formacion-2 h3 {
+  margin-bottom: 0;
+}
+
+p.enlarge {
+  font-size: 120%;
+}
+
+p strong {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+ul[class^='tecnicas-'] li {
+  border-bottom: 1px solid var(--cv-line);
+}
+
+ul[class^='tecnicas-'] li:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 1025px) {
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  h3 > span {
+    float: right;
+  }
+}
+
+/* Content > Footer */
+footer {
+  padding: 1rem;
+  background-color: #dcdcdc;
+}
+
+footer p {
+  font-style: italic;
+}
+
+footer p span {
+  display: block;
+  font-style: normal;
+}
+
+footer p span.year {
+  display: inline;
+}
+
+@media (min-width: 1025px) {
+  footer {
+    background-color: transparent;
+  }
+}

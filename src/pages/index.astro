@@ -1,11 +1,63 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '../layouts/Layout.astro'
+const lang = 'es'
+const title = 'Programador de sitios web accesibles.'
+const description =
+  'Diseño y programación de páginas web que cumplen con los estándares y son accesibles. Creación de sitos con WordPress, Prestashop, Joomla, personalizados.'
+const canonical = ''
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  lang={lang}
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <article>
+    <a
+      href="http://www.aleceia.com/"
+      hreflang="en"
+      title="Ir a la web de Aleceia de Juan MCIL, MA, DPSI"
+    >
+      <picture>
+        <source srcset="/images/aleceia.v2.avif" type="image/avif" />
+        <source srcset="/images/aleceia.v2.webp" type="image/webp" />
+        <img
+          src="/images/aleceia.v2.jpg"
+          class="img-responsive"
+          alt="Captura de pantalla de la web de Aleceia de Juan MCIL, MA, DPSI"
+          width="720"
+          height="540"
+          loading="lazy"
+        />
+      </picture>
+    </a>
+    <h3 lang="en">
+      Aleceia de Juan MCIL, MA, DPSI. Interpreting and Translation Services
+    </h3>
+    <p>
+      <strong>Nueva versión 2025</strong>. Web de Aleceia de Juan MCIL, MA, DPSI
+      realizada con <strong>Astro</strong>
+    </p>
+    <ul class="item-details">
+      <li>
+        Cliente:
+        <strong>Aleceia de Juan</strong>
+      </li>
+      <li>
+        Servicios: <strong>Diseño, maquetación, SEO,</strong> sitio web accesible
+        para el <strong>nivel AA</strong> de la Norma UNE 139803:2012 y las <strong
+          >WCAG 2.2.</strong
+        >,
+        <strong>WPO</strong> (Web Performance Optimization)
+      </li>
+      <li>
+        <strong
+          ><a href="http://www.aleceia.com/" hreflang="en" lang="en"
+            >Ir a la web de Interpreting and Translation Services (en inglés)</a
+          ></strong
+        >
+      </li>
+    </ul>
+  </article>
 </Layout>

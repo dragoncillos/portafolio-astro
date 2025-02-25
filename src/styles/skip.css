@@ -1,0 +1,23 @@
+/*
+---------------------------------------------------------------------------------
+		Component: Skip
+		URL: https://www.dragoncillos.com/
+		Author: dragoncillos.com
+		v2.1: 21/02/2024
+---------------------------------------------------------------------------------
+*/
+
+#skiptoContent {
+	position: absolute;
+	top: -4rem;
+	left: 0;
+
+	& a:is(:focus, :active) {
+		position: absolute;
+		z-index: 100;
+		top: 6rem;
+		left: 2rem;
+		padding: 0.5rem;
+		background: hsl(54deg 53% 90%);
+	}
+}
