@@ -1,3 +1,7 @@
+---
+const isEnglishPage = Astro.url.pathname.startsWith('/en/')
+---
+
 <div id="sectionHero">
   <div class="hero">
     <div class="card">
@@ -19,7 +23,9 @@
           <source srcset="/images/playa.webp" type="image/webp" />
           <img
             src="/images/playa.jpg"
-            alt="Marcos de Miguel (dragoncillos) en la playa"
+            alt={isEnglishPage
+              ? 'Marcos de Miguel (dragoncillos) on the beach'
+              : 'Marcos de Miguel (dragoncillos) en la playa'}
             width="250"
             height="250"
           />
@@ -27,6 +33,12 @@
       </div>
     </div>
     <p><strong>Marcos de Miguel</strong></p>
-    <p>Diseñador y programador web - WCAG 2.2 - SEO - SEM - Marketing social</p>
+    <p>
+      {
+        isEnglishPage
+          ? 'Designer and web developer - WCAG 2.2 - SEO - SEM - Social marketing'
+          : 'Diseñador y programador web - WCAG 2.2 - SEO - SEM - Marketing social'
+      }
+    </p>
   </div>
 </div>

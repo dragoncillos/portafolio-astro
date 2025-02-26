@@ -2,7 +2,6 @@
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Hero from '../components/Hero.astro'
-import SobreMi from '../components/SobreMi.astro'
 import '../styles/style.css'
 interface Props {
   lang: string
@@ -12,6 +11,7 @@ interface Props {
 }
 
 const { lang, title, description, canonical } = Astro.props
+const isEnglishPage = Astro.url.pathname.startsWith('/en/')
 ---
 
 <!doctype html>
@@ -20,30 +20,29 @@ const { lang, title, description, canonical } = Astro.props
     <meta charset="UTF-8" />
     <title>
       Marcos de Miguel. {title}
-    </title><meta name="viewport" content="width=device-width" /><meta
-      name="generator"
-      content={Astro.generator}
-    /><meta name="description" content={description} /><meta
-      name="author"
-      content="Marcos de Miguel"
-    /><link rel="icon" type="image/svg+xml" href="/favicon.svg" /><link
+    </title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Marcos de Miguel" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" /><link
       rel="canonical"
       href={`https://www.dragoncillos.com/${canonical}`}
-    /></head
-  >
-
+    />
+  </head>
   <body id="pageTop">
     <div id="skiptoContent">
-      <a href="#mainContent">Saltar al contenido principal</a>
+      <a href="#mainContent"
+        >{
+          isEnglishPage
+            ? 'Skyp to main content'
+            : 'Saltar al contenido principal'
+        }</a
+      >
     </div>
     <Header />
     <Hero />
     <main id="mainContent">
-      <SobreMi />
-      <section id="proyectos">
-        <h2>Proyectos</h2>
-        <slot />
-      </section>
+      <slot />
     </main>
     <Footer />
     <!-- Scripts -->
