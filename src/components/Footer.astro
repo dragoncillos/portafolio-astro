@@ -89,7 +89,10 @@ const isEnglishPage = Astro.url.pathname.startsWith('/en/')
   <div class="footerBottom">
     <p>
       <span class="year"></span> -
-      <a href="https://www.dragoncillos.com/">www.dragoncillos.com</a>
+      <a href="https://www.dragoncillos.com/">www.dragoncillos.com</a> - {
+        isEnglishPage ? 'Built with ' : 'Creado con '
+      }
+      <a href="https://astro.build/">Astro</a> 🪐
     </p>
   </div>
 </footer>

@@ -246,8 +246,6 @@ article {
   background-color: color-mix(in srgb, var(--color-primary) 85%, black);
 
   & a {
-    text-decoration: none;
-
     &:is(:link, :visited) {
       color: var(--color-white);
     }
