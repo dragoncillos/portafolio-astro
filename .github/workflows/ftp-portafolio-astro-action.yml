@@ -1,0 +1,36 @@
+# v1.0: 27/02/2025
+# Source: dragoncillos.com
+
+name: Deploy via ftp
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    # Paso 1: Asegura que el repositorio sea clonado y esté disponible 
+    # en el contenedor de GitHub Actions antes de la subida por FTP.
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build
+
+    # Paso 2: Subir los archivos al servidor FTP
+    - name: Upload ftp
+      uses: sebastianpopp/ftp-action@releases/v2
+      with:
+        host: ${{ secrets.FTP_SERVER }}
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        localDir: "dist"
+        remoteDir: "web"
