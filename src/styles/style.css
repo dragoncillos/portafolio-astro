@@ -107,7 +107,7 @@ h2 {
   color: var(--color-primary);
 }
 
-article {
+.proyecto {
   &:not(:last-child) {
     margin-block-end: calc(var(--gap) + 2rem);
   }
