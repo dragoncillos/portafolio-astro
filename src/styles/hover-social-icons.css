@@ -3,7 +3,7 @@
 		Component: Hover social icons
 		URL: https://www.dragoncillos.com/
 		Author: dragoncillos.com
-		v2.1: 21/02/2024
+		v2.2: 01/03/2025
 ---------------------------------------------------------------------------------
 */
 
@@ -54,7 +54,7 @@
 	}
 }
 
-.socialIcons :is(.icon:hover, .twitter:focus-within, .instagram:focus-within, .youtube:focus-within, .linkedin:focus-within) .tooltip {
+.socialIcons :is(.icon:hover, .bluesky:focus-within, .twitter:focus-within, .instagram:focus-within, .youtube:focus-within, .linkedin:focus-within) .tooltip {
 	top: -42px;
 	left: -14px;
 	opacity: 1;
