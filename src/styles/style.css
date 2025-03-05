@@ -14,7 +14,9 @@
 @import url("hero.css");
 @import url("hover-social-icons.css");
 
-/* Viewport Variables */
+/*
+  MARK: Viewport Variables
+*/
 @custom-media --md-above (width >= 768px);
 @custom-media --md-below (width <= 767px);
 
@@ -22,6 +24,9 @@
 @custom-media --reduced-motion (prefers-reduced-motion);
 @custom-media --scheme-dark (prefers-color-scheme: dark);
 
+/*
+  MARK: root
+*/
 :root {
   color-scheme: light dark;
   font-family: Helvetica, sans-serif;
@@ -53,7 +58,9 @@
   }
 }
 
-/* General */
+/*
+  MARK: General
+*/
 .container {
   display: flex;
   align-items: center;
@@ -70,7 +77,9 @@ a:is(:hover, :focus, :active) {
   color: var(--color-primary);
 }
 
-/* Main */
+/*
+  MARK: Main
+*/
 main {
   margin: 0 auto;
   max-width: var(--width-container);
@@ -214,7 +223,9 @@ h2 {
   }
 }
 
-/* Footer */
+/*
+  MARK: Footer
+*/
 .footerTop {
   padding: var(--gap);
   color: var(--color-white);
@@ -235,6 +246,8 @@ h2 {
     & ul {
       display: flex;
       gap: calc(var(--gap) * 1.5);
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 }
@@ -256,7 +269,9 @@ h2 {
   }
 }
 
-/* Prefers color scheme */
+/*
+  MARK: Prefers color scheme
+*/
 @media (--scheme-dark) {
   :root {
     --color-primary: hsl(176, 36%, 25%);
