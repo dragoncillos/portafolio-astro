@@ -143,7 +143,7 @@ h2 {
 
   & img {
     height: auto;
-    border: 3px solid transparent;
+    border: 8px solid transparent;
     border-radius: 0.2rem;
     outline: 2px solid hsl(0deg 0% 79%);
   }
