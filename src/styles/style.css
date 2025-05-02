@@ -8,6 +8,7 @@
 */
 
 @import url("reset.css");
+@import url("utilities.css");
 @import url("skip.css");
 @import url("nav-menu.css");
 @import url("card-flip.css");

@@ -1,0 +1,20 @@
+/*
+---------------------------------------------------------------------------------
+		Component: Utilities CSS
+		URL: https://www.dragoncillos.com/
+		Author: dragoncillos.com
+		v2.1: 02/05/2025
+---------------------------------------------------------------------------------
+*/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+  white-space: nowrap;
+}

@@ -1,23 +1,44 @@
 /*
 ---------------------------------------------------------------------------------
-		Component: Skip
+		Component: Skip links
+		Inspirado en: https://www.smashingmagazine.com/2025/04/what-mean-site-be-keyboard-navigable/
 		URL: https://www.dragoncillos.com/
 		Author: dragoncillos.com
 		v2.1: 21/02/2024
 ---------------------------------------------------------------------------------
 */
 
-#skiptoContent {
-	position: absolute;
-	top: -4rem;
-	left: 0;
+.skip-links {
+	color: var(--color-white);
+	background-color: var(--color-primary);
 
-	& a:is(:focus, :active) {
-		position: absolute;
-		z-index: 100;
-		top: 6rem;
-		left: 2rem;
-		padding: 0.5rem;
-		background: hsl(54deg 53% 90%);
+	& .skip-links__content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		transition: height .4s ease-in-out;
+		height: 50px;
+
+		&:not(:focus-within) {
+			height: 0;
+		}
+
+		@media (--reduced-motion ) {
+			transition: none;
+		}
+	}
+
+	& ul {
+		display: flex;
+		gap: 1rem;
+
+		& a:is(:link, :visited) {
+			color: var(--color-white);
+		}
+
+		& a:is(:focus, :active) {
+			text-decoration: none;
+		}
 	}
 }

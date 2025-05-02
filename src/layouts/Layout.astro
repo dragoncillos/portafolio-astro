@@ -28,14 +28,40 @@ const isEnglishPage = Astro.url.pathname.startsWith('/en/')
     <link rel="canonical" href={`https://www.dragoncillos.com/${canonical}`} />
   </head>
   <body id="pageTop">
-    <div id="skiptoContent">
-      <a href="#mainContent"
-        >{
-          isEnglishPage
-            ? 'Skyp to main content'
-            : 'Saltar al contenido principal'
-        }</a
-      >
+    <div class="skip-links">
+      <div class="skip-links__content">
+        <div class="skip-links__content__label">
+          {isEnglishPage ? 'Skyp to' : 'Saltar a'}:
+        </div>
+        <ul role="list">
+          <li>
+            <a href="#navigation"
+              ><span class="sr-only"
+                >{isEnglishPage ? 'Skyp to' : 'Saltar a la'}</span
+              >
+              {
+                isEnglishPage ? 'Principal Navigation' : 'Navegación Principal'
+              }</a
+            >
+          </li>
+          <li>
+            <a href="#mainContent"
+              ><span class="sr-only"
+                >{isEnglishPage ? 'Skyp to ' : 'Saltar al'}</span
+              >
+              {isEnglishPage ? 'Main Content' : 'Contenido Principal'}</a
+            >
+          </li>
+          <li>
+            <a href="#footer"
+              ><span class="sr-only"
+                >{isEnglishPage ? 'Skyp to' : 'Saltar al'}</span
+              >
+              {isEnglishPage ? 'Footer' : 'Pie de Página'}</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
     <Header />
     <Hero />
