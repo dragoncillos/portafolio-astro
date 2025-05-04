@@ -34,11 +34,15 @@
 		gap: 1rem;
 
 		& a:is(:link, :visited) {
+			padding: 0.2rem 0.4rem;
 			color: var(--color-white);
 		}
 
 		& a:is(:focus, :active) {
+			border-radius: 0.5rem;
 			text-decoration: none;
+			color: var(--color-primary);
+			background-color: var(--color-white);
 		}
 	}
 }
