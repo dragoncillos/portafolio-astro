@@ -1,20 +1,24 @@
 /*
 ---------------------------------------------------------------------------------
-		Component: Utilities CSS
+		Component: Utilities SCSS
 		URL: https://www.dragoncillos.com/
 		Author: dragoncillos.com
-		v2.1: 02/05/2025
+		v2.1: 05/05/2025
 ---------------------------------------------------------------------------------
 */
 
-.sr-only {
+@mixin sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
   white-space: nowrap;
+}
+
+.sr-only {
+  @include sr-only;
 }

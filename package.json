@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.7.10",
-    "lightningcss": "^1.29.1"
+    "lightningcss": "^1.29.1",
+    "sass": "^1.87.0"
   }
 }
