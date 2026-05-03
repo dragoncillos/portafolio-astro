@@ -15,7 +15,7 @@ const isEnglishPage = Astro.url.pathname.startsWith('/en/')
       </a>
     </h1>
     <nav id="navigation" class="nav">
-      <button class="nav__toggle" aria-expanded="false" type="button">
+      <button class="nav__toggle" aria-expanded="false" aria-label={isEnglishPage ? 'Open menu' : 'Abrir menú'} type="button">
         <span class="menu">{isEnglishPage ? 'MENU' : 'MENÚ'}</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
