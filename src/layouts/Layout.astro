@@ -31,13 +31,13 @@ const isEnglishPage = Astro.url.pathname.startsWith('/en/')
     <div class="skip-links">
       <div class="skip-links__content">
         <div class="skip-links__content__label">
-          {isEnglishPage ? 'Skyp to' : 'Saltar a'}:
+          {isEnglishPage ? 'Skip to' : 'Saltar a'}:
         </div>
         <ul role="list">
           <li>
             <a href="#navigation"
               ><span class="sr-only"
-                >{isEnglishPage ? 'Skyp to' : 'Saltar al'}</span
+                >{isEnglishPage ? 'Skip to' : 'Saltar al'}</span
               >
               {isEnglishPage ? 'Primary Navigation' : 'Menú de Navegación'}</a
             >
@@ -45,7 +45,7 @@ const isEnglishPage = Astro.url.pathname.startsWith('/en/')
           <li>
             <a href="#mainContent"
               ><span class="sr-only"
-                >{isEnglishPage ? 'Skyp to ' : 'Saltar al'}</span
+                >{isEnglishPage ? 'Skip to ' : 'Saltar al'}</span
               >
               {isEnglishPage ? 'Main Content' : 'Contenido Principal'}</a
             >
@@ -53,7 +53,7 @@ const isEnglishPage = Astro.url.pathname.startsWith('/en/')
           <li>
             <a href="#footer"
               ><span class="sr-only"
-                >{isEnglishPage ? 'Skyp to' : 'Saltar al'}</span
+                >{isEnglishPage ? 'Skip to' : 'Saltar al'}</span
               >
               {isEnglishPage ? 'Footer' : 'Pie de Página'}</a
             >
