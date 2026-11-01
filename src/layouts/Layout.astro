@@ -31,32 +31,17 @@ const isEnglishPage = Astro.url.pathname.startsWith('/en/')
     <div class="skip-links">
       <div class="skip-links__content">
         <div class="skip-links__content__label">
-          {isEnglishPage ? 'Skip to' : 'Saltar a'}:
+          {isEnglishPage ? 'Skip to' : 'Saltar al'}:
         </div>
         <ul role="list">
           <li>
-            <a href="#navigation"
-              ><span class="sr-only"
-                >{isEnglishPage ? 'Skip to' : 'Saltar al'}</span
-              >
-              {isEnglishPage ? 'Primary Navigation' : 'Menú de Navegación'}</a
-            >
+            <a href="#navigation"><span class="sr-only">{isEnglishPage ? 'Skip to' : 'Saltar al'}</span> {isEnglishPage ? 'Primary Navigation' : 'Menú de Navegación'}</a>
           </li>
           <li>
-            <a href="#mainContent"
-              ><span class="sr-only"
-                >{isEnglishPage ? 'Skip to ' : 'Saltar al'}</span
-              >
-              {isEnglishPage ? 'Main Content' : 'Contenido Principal'}</a
-            >
+            <a href="#mainContent"><span class="sr-only">{isEnglishPage ? 'Skip to ' : 'Saltar al'}</span> {isEnglishPage ? 'Main Content' : 'Contenido Principal'}</a>
           </li>
           <li>
-            <a href="#footer"
-              ><span class="sr-only"
-                >{isEnglishPage ? 'Skip to' : 'Saltar al'}</span
-              >
-              {isEnglishPage ? 'Footer' : 'Pie de Página'}</a
-            >
+            <a href="#footer"><span class="sr-only">{isEnglishPage ? 'Skip to' : 'Saltar al'}</span> {isEnglishPage ? 'Footer' : 'Pie de Página'}</a>
           </li>
         </ul>
       </div>
