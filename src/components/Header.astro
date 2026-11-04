@@ -34,14 +34,14 @@ const isEnglishPage = Astro.url.pathname.startsWith('/en/')
         <li class={`${isEnglishPage ? '' : 'activeLang'}`}>
           <a
             href="/"
-            {...isEnglishPage ? { hreflang: 'es' } : {}}
+            {...isEnglishPage ? { hreflang: 'es', lang: 'es' } : {}}
             title="Ir a la versión española">Español</a
           >
         </li>
         <li class={`${isEnglishPage ? 'activeLang' : ''}`}>
           <a
             href="/en/"
-            {...isEnglishPage ? {} : { hreflang: 'en' }}
+            {...isEnglishPage ? {} : { hreflang: 'en', lang: 'en' }}
             title="Go to English version">English</a
           >
         </li>
